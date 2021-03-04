@@ -12,10 +12,10 @@ module.exports = function toReadable (number) {
     }
 
     if (number > 20 && number < 100) {
-      return tenNumberArray[Number(str[0])] + numberArray[Number(str[1])];  
+      return tenNumberArray[Number(str[0]) - 2] + numberArray[Number(str[1])];  
     }
 
     if (number % 100 === 0) {
-        return numberArray[number/100] + 'hundred';
+        return numberArray[number/100] + ' ' + 'hundred';
     }
 }
