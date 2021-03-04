@@ -24,7 +24,7 @@ module.exports = function toReadable (number) {
     }
 
     if (number > 100 && number < 1000) {
-        return numberArray[number/100] + ' ' + 'hundred' + ' ' + numberArray[number/100] + ' ' + 'hundred';
+        return numberArray[number/100] + ' ' + 'hundred' + ' ' + tenNumberArray[Number(str[0]) - 2] + ' ' + numberArray[Number(str[1])];
     }
 }
 
