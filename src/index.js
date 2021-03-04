@@ -5,7 +5,9 @@ module.exports = function toReadable (number) {
     if (number < 20) {
         return numberArray[number];
     }
-
+    if (number > 100 && number < 1000 && (Number(str[1] + str[2]) === 10)) {
+        return numberArray[Math.floor(number/100)] + ' ' + 'hundred' + ' ' +  'ten'; 
+    }
     if ((number % 10 === 0) && (number < 100) && (number >= 20)) {
         return tenNumberArray[(number/10) - 2];
     }
