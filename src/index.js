@@ -19,11 +19,11 @@ module.exports = function toReadable (number) {
         return numberArray[number/100] + ' ' + 'hundred';
     }
 
-    if (number > 100 && number % 10 === 0) {
+    if ((number > 100) && (number % 10 === 0)) {
         return numberArray[number/100] + ' ' + 'hundred' + ' ' + tenNumberArray[Number(str[0]) - 2];
     }
 
-    if (number > 100 && number < 1000) {
+    if (number > 100) {
         return numberArray[number/100] + ' ' + 'hundred' + ' ' + tenNumberArray[Number(str[0]) - 2] + ' ' + numberArray[Number(str[1])];
     }
 }
