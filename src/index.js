@@ -14,6 +14,6 @@ module.exports = function toReadable (number) {
         let str = String(number);
         str[0] = tenNumberArray[str[0] -2];
         str [1] = numberArray[str[1]];
-        return `${str[0]} ${str[1]};
+        return `${str[0]} ${str[1]}`;
     }
 }
