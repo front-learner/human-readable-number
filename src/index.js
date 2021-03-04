@@ -1,10 +1,16 @@
 module.exports = function toReadable (number) {
     let numberArray = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen',];
     let tenNumberArray = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    let str = number.toString();
     if (number < 20) {
         return numberArray[number];
     }
-    if (number % 10 && String(number).length < 3) {
-        return tenNumberArray[number/10 - 2];
+
+    if (number % 10 && number < 100 ) {
+        return tenNumberArray[(number/10) - 2];
+    }
+
+    if (number > 20 && number < 100) {
+        return tenNumberArray[Number(str[0])] + '' + numberArray[Number(str[1])];
     }
 }
