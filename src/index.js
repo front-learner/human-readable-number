@@ -22,12 +22,12 @@ module.exports = function toReadable (number) {
         return numberArray[Math.floor(number/100)] + ' ' + 'hundred' + ' ' + tenNumberArray[Number(str[1]) - 2];
     }
 
-    if (number > 100 && number < 1000 && (Number(str[1]) > 2)) {
+    if (number > 100 && number < 1000 && (Number(str[1]) >= 2)) {
         return numberArray[Math.floor(number/100)] + ' ' + 'hundred' + ' ' + tenNumberArray[Number(str[1]) - 2] + ' ' + numberArray[Number(str[2])];
     }
 
     if (number > 100 && number < 1000 && (Number(str[1]) < 2)) {
-        return numberArray[Math.floor(number/100)] + ' ' + 'hundred' + ' ' +  numberArray[Number(str[2])]; 
+        return numberArray[Math.floor(number/100)] + ' ' + 'hundred' + ' ' +  numberArray[Number(str[2]) + 10]; 
     }
 }
 
